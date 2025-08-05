@@ -1,36 +1,65 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Study Tracker App
 
-## Getting Started
+学習時間と目標達成を記録するシンプルなタイマーアプリです。  
+目標設定からタイマー計測、履歴の保存まで、ブラウザだけで完結します。
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## ✨ 主な機能
+
+- **学習目標の設定**
+  - 目標内容と目標時間（分）を入力
+- **タイマー機能**
+  - 経過時間と残り時間をリアルタイムで表示
+  - 円形プログレスバーで進捗を可視化
+- **履歴保存**
+  - ローカルストレージに自動保存
+  - 過去の学習目標、達成状況、実際の学習時間を一覧表示
+- **達成判定**
+  - 実際の学習時間が目標時間以上なら「達成」マーク
+
+---
+
+## 🛠 使用技術
+
+- **Next.js**（App Router）
+- **React Hooks**
+- **TypeScript**
+- **Tailwind CSS**
+- **lucide-react**（アイコン）
+- **LocalStorage API**
+
+---
+
+## 🗂 ディレクトリ構成
+
+```
+study-tracker-app/
+├── components/
+│   └── StudyTrackerApp.tsx  # メインコンポーネント
+├── app/
+│   └── page.tsx             # エントリーポイント
+├── styles/
+│   └── globals.css          # Tailwind 設定
+└── README.md
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## ⚙ 環境変数
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+現在このアプリは Firebase などの外部サービスを利用していないため、環境変数の設定は不要です。
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## 💾 データ保存について
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+* ブラウザの **localStorage** を使用して履歴を保存します。
+* デバイスやブラウザを変えると履歴は引き継がれません。
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+## 📜 ライセンス
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+MIT License
+自由に改変・利用可能ですが、自己責任でお願いします。
